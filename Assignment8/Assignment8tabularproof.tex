@@ -1,0 +1,221 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide} %loads TikZ and tkz-base
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                          
+    \usepackage{array}                                          
+    \usepackage{longtable}                                      
+    \usepackage{calc}                                           
+    \usepackage{multirow}                                       
+    \usepackage{hhline}                                         
+    \usepackage{ifthen}
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\begin{document}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\bibliographystyle{IEEEtran}
+
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+
+\numberwithin{equation}{subsection}
+
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+\renewcommand{\thefigure}{\theproblem}
+
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+
+\title{Assignment 8}
+\author{Surbhi Agarwal}
+
+\maketitle
+
+\newpage
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{abstract}
+This document deals with linear operators and basis of a finite dimensional vector space over a field.
+\end{abstract}
+
+\section{Problem}
+Let $\mathbb V$ be finite dimensional vector space over the field $\mathbb F$, and let $\vec{S}$ and $\vec{T}$ be linear operators on $\mathbb V$. When do there exist ordered bases $\mathcal{B}$ and $\mathcal{B}'$ for $\mathbb V$ such that $[S]_\mathcal{B} = [T]_\mathcal{B}'$? Prove that such bases exist if and only if there is an invertible linear operator $\vec{U}$ on $\mathbb V$ such that $\vec{T} = \vec{U}\vec{S}\vec{U}^{-1}$
+\section{Solution}
+\begin{table*}[h!]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Assume $[S]_\mathcal{B} = [T]_\mathcal{B'}$ & Assume $\vec{T} = \vec{U}\vec{S}\vec{U}^{-1}$\\[0.5ex]\hline
+ & \\
+\textbf{Given}&\textbf{Given}\\
+ & \\
+$\mathbb V$ is a finite dimensional vector space over field $\mathbb F$ & $\mathbb V$ is a finite dimensional vector space over field $\mathbb F$\\ $\vec{S}$ and $\vec{T}$ are linear operators on $\mathbb V$ & $\vec{S}$ and $\vec{T}$ are linear operators on $\mathbb V$\\
+$\mathcal{B}$ and $\mathcal{B}'$ are ordered bases for $\mathbb V$ & $\mathcal{B}$ and $\mathcal{B}'$ are ordered bases for $\mathbb V$\\
+$[S]_\mathcal{B} = [T]_\mathcal{B}'$ & There is an invertible linear operator $\vec{U}$ on $\mathbb V$\\
+ &  such that $\vec{T} = \vec{U}\vec{S}\vec{U}^{-1}$\\ [0.5ex] \hline
+  & \\
+\textbf{To prove}&\textbf{To prove}\\
+ & \\
+There is an invertible linear operator $\vec{U}$ on $\mathbb V$ & $[S]_\mathcal{B} = [T]_\mathcal{B}'\\
+such that $\vec{T} = \vec{U}\vec{S}\vec{U}^{-1}$ & \\ [0.5ex] \hline
+ & \\
+\textbf{Assumptions}&\textbf{Assumptions}\\
+ & \\
+Let $\vec{U}$ be the operator which carries $\mathcal{B}$ to $\mathcal{B}' &
+Let $\vec{U}$ be the operator which carries $\mathcal{B}$ to $\mathcal{B}'\\
+$\mathcal{B} = \{\vec{x}_1,\vec{x}_2,\ldots,\vec{x}_n\}$ &
+$\mathcal{B} = \{\vec{x}_1,\vec{x}_2,\ldots,\vec{x}_n\}$\\
+$\mathcal{B}' = \{\vec{x}_1',\vec{x}_2',\ldots,\vec{x}_n'\}$ &
+$\mathcal{B}' = \{\vec{x}_1',\vec{x}_2',\ldots,\vec{x}_n'\}$\\ [0.5ex] \hline
+ & \\
+\textbf{Proof}&\textbf{Proof}\\
+ & \\
+For $\vec{v} \in \mathbb V$, expressed as a linear combination &
+For $\vec{v} \in \mathbb V$, expressed as a linear combination\\
+of the vectors of $\mathcal{B}$ &
+of the vectors of $\mathcal{B'}$\\
+$\vec{v} = a_1\vec{x}_1 + a_2\vec{x}_2 + \ldots + a_n\vec{x}_n$ &
+$\vec{v} = a_1\vec{x}_1' + a_2\vec{x}_2' + \ldots + a_n\vec{x}_n'$\\
+ & \\
+$\vec{w} = \vec{U}(\vec{v}) = a_1\vec{x}_1' + a_2\vec{x}_2' + \ldots + a_n\vec{x}_n'$ &
+$\vec{U}\vec{S}\vec{U}^{-1}(\vec{v}) = \vec{T}(\vec{v})\\
+ & $\quad\quad\quad= \vec{T}(a_1\vec{x}_1' + a_2\vec{x}_2' + \ldots + a_n\vec{x}_n')$\\
+$\because [S]_\mathcal{B} = [T]_\mathcal{B}'$ &
+$\quad\quad\quad= c_1\vec{x}_1' + c_2\vec{x}_2' + \ldots + c_n\vec{x}_n'$\\
+$\vec{S}(\vec{v}) = c_1\vec{x_1} + c_2\vec{x}_2 + \ldots + c_n\vec{x}_n\quad\text{and}$ & \\
+$\vec{T}(\vec{w}) = c_1\vec{x}_1' + c_2\vec{x}_2' + \ldots + c_n\vec{x}_n'$ &
+But we know that\\
+ & $\vec{U}\vec{S}\vec{U}^{-1}(\vec{v}) = \vec{U}\vec{S}\vec{U}^{-1}(a_1\vec{x}_1' + a_2\vec{x}_2' + \ldots + a_n\vec{x}_n')$\\
+$\vec{U}^{-1}\vec{T}\vec{U}(\vec{v})$ &
+$\quad\quad\quad\quad= \vec{U}\vec{S}(a_1\vec{x}_1+a_2\vec{x}_2+\ldots+a_n\vec{x}_n)$\\
+$=\vec{U}^{-1}\vec{T}(\vec{w})$ & \\
+$=\vec{U}^{-1}(c_1\vec{x}_1' + c_2\vec{x}_2' + \ldots + c_n\vec{x}_n')$ &
+So, $\vec{S}$ in basis $\mathcal{B}$ has the same entries as $\vec{T}$ in basis $\mathcal{B}'\\
+$= c_1\vec{x}_1 + c_2\vec{x}_2 + \ldots + c_n\vec{x}_n$ &
+$\therefore [S]_\mathcal{B} = [T]_\mathcal{B'}$\\
+$=\vec{S}(\vec{v})$ & \\
+ & \\
+$\implies\vec{U}^{-1}\vec{T}\vec{U} = \vec{S}$ & \\
+$\implies \vec{T} = \vec{U}\vec{S}\vec{U}^{-1}$ & \\[0.5ex] \hline
+\end{tabular}
+\caption{}
+\label{table:1}
+\end{center}
+\vspace{-0.5cm}
+\end{table*}
+\end{document}
