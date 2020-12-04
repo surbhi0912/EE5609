@@ -1,0 +1,298 @@
+\documentclass[journal,12pt]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide} %loads TikZ and tkz-base
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                          
+    \usepackage{array}                                          
+    \usepackage{longtable}                                      
+    \usepackage{calc}                                           
+    \usepackage{multirow}                                       
+    \usepackage{hhline}                                         
+    \usepackage{ifthen}
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\begin{document}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\bibliographystyle{IEEEtran}
+
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+
+\numberwithin{equation}{subsection}
+
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+\renewcommand{\thefigure}{\theproblem}
+
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\begin{center}
+\huge Assignment 9\\
+\large Surbhi Agarwal\\
+\end{center}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{abstract}
+This document deals with properties of subspaces of a finite dimensional vector space.
+\end{abstract}
+
+\section{Problem}
+Let $W_1$ and $W_2$ be subspaces of a finite-dimensional vector space $\mathbb V$. Prove that
+\begin{enumerate}
+    \item $(W_1 + W_2)^0 = W_1^0 \cap W_2^0$
+    \item $(W_1 \cap W_2)^0 = W_1^0 + W_2^0$
+\end{enumerate}
+\section{Solution}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
+    \hline
+        & \\
+        Given &  $W_1$ and $W_2$ are subspaces of a finite dimensional vector space $\mathbb V$\\
+        & \\
+        \hline
+        & \\
+        1. To prove & $(W_1 + W_2)^0 = W_1^0 \cap W_2^0$\\
+        & \\
+    \hline
+        & \\
+        Proof & Let $f \in (W_1 + W_2)^0$\\
+        of & \\
+        $(W_1 + W_2)^0$ & $\forall \vec{v} \in (W_1 + W_2)$\\
+        $\subseteq$ & $f(\vec{v}) = 0$\\
+        $(W_1^0 \cap W_2^0)$ & $\implies \forall \vec{w}_1 \in W_1, \vec{w}_2 \in W_2$\\
+        & $\vec{w_1} + \vec{w_2} \in (W_1 + W_2)$\\
+        & $\therefore f(\vec{w_1} + \vec{w_2}) = 0$\\
+        & \\
+        & $\implies$ When $\vec{w}_2 = 0$, then $\forall \vec{w}_1 \in W_1$\\
+        & $f(\vec{w_1}) = 0$\\
+        & $\therefore f \in W_1^0$\\
+        &\\
+        & And when $\vec{w_1} = 0, \forall \vec{w_2} \in W_2$\\
+        & $f(\vec{w_2}) = 0$\\
+        & $\therefore f \in W_2^0$\\
+        & \\
+        & $\because f \in W_1^0, f \in W_2^0$\\
+        & $\implies f \in (W_1^0 \cap W_2^0)$\\
+        & \\
+        & $\therefore (W_1 + W_2)^0 \subseteq (W_1^0 \cap W_2^0)$\\
+    \hline
+        & \\
+        Proof & Let $f \in (W_1^0 \cap W_2^0)$\\
+        of & \\
+        $(W_1^0 \cap W_2^0)$ & $\implies f \in W_1^0, f \in W_2^0$\\
+        $\subseteq$ & $\implies \forall \vec{w}_1 \in W_1, \vec{w}_2 \in W_2$\\
+        $(W_1 + W_2)^0$ & $f(\vec{w}_1) = 0$ and $f(\vec{w}_2) = 0$\\
+        & \\
+        & $\forall \vec{v} \in (W_1+W_2),$\\
+    \hline
+        & $\vec{v} = \vec{w}_1 + \vec{w}_2$\\
+        & $\implies f(\vec{v}) = f(\vec{w}_1 + \vec{w}_2)$\\
+        & $\implies f(\vec{v}) = f(\vec{w}_1) + f(\vec{w}_2)$\\
+        & $\implies f(\vec{v}) = 0$\\
+        & $\implies f \in (W_1 + W_2)^0$\\
+        & \\
+        & $\therefore (W_1^0 \cap W_2^0) \subseteq (W_1 + W_2)^0$\\
+        & \\
+    \hline
+        & \\
+        & Hence, $(W_1 + W_2)^0 = (W_1^0 \cap W_2^0)$\\
+        & \\
+    \hline
+        & \\
+        2. To prove & $(W_1 \cap W_2)^0 = W_1^0 + W_2^0$\\
+        & \\
+    \hline
+        & \\
+        Proof & Let $f \in (W_1^0 + W_2^0)$\\
+        of & for some $f_1 \in W_1^0, f_2 \in W_2^0$,\\
+        $(W_1^0 + W_2^0)$ & $f = f_1 + f_2$\\
+        $\subseteq$ & \\
+        $(W_1 \cap W_2)^0$ & Now, for $\vec{v} \in (W_1 \cap W_2)$\\
+        & $f(\vec{v}) = (f_1 + f_2)(\vec{v})$\\
+        & $\implies f(\vec{v}) = f_1(\vec{v}) + f_2(\vec{v})$\\
+        & \\
+        & $\because \vec{v} \in (W_1 \cap W_2)$\\
+        & $\implies \vec{v} \in W_1$, and $\vec{v} \in W_2$\\
+        & So, $f_1(\vec{v}) = 0$, and $f_2(\vec{v}) = 0$\\
+        & \\
+        & $\implies f(\vec{v}) = 0 + 0 = 0$\\
+        & $\implies f \in (W_1 \cap W_2)^0$\\
+        & \\
+        & $\therefore (W_1^0 + W_2^0) \subseteq (W_1 \cap W_2)^0$\\
+        & \\
+    \hline
+        & \\
+        Proof & Let $f \in (W_1 \cap W_2)^0$\\
+        of & \\
+        $(W_1 \cap W_2)^0$ & Assuming\\
+        $\subseteq$ & Basis of $W_1$ as $\{ \vec{\alpha}_1,\ldots,\vec{\alpha_k}, \vec{\beta}_1,\ldots,\vec{\beta}_l \}$\\
+        $(W_1^0 + W_2^0)$ & Basis of $W_2$ as $\{ \vec{\alpha}_1,\ldots,\vec{\alpha_k}, \vec{\gamma}_1,\ldots,\vec{\gamma}_m \}$\\
+        & \\
+        & $\therefore$ Basis of $(W_1 \cap W_2)$ is $\{ \vec{\alpha}_1,\ldots,\vec{\alpha_k} \}$\\
+        & and Basis of $W_1 + W_2$ is $\{ \vec{\alpha}_1,\ldots,\vec{\alpha_k}, \vec{\beta}_1,\ldots,\vec{\beta}_l, \vec{\gamma}_1,\ldots,\vec{\gamma}_m\}$\\
+        & \\
+        & Now, for $\vec{v} \in (W_1 + W_2)$\\
+        & $\vec{v} = \sum_{i=1}^{k} x_i\alpha_i + \sum_{i=1}^{l} y_i\beta_i + \sum_{i=1}^{m} z_i\gamma_i$\\
+        & $f(\vec{v}) = \sum_{i=1}^{k} a_ix_i + \sum_{i=1}^{l} b_iy_i + \sum_{i=1}^{m} c_iz_i$\\
+        & \\
+        & $\forall \vec{v} \in (W_1 \cap W_2)$\\
+        & $\vec{v} = \sum_{i=1}^{k} x_i\alpha_i$\\
+    \hline
+        & $f(\vec{v}) = \sum_{i=1}^{k} a_ix_i$\\
+        & But since $f \in (W_1 \cap W_2)^0$, thus $f(\vec{v}) = 0$\\
+        & $\therefore a_1 = a_2 = \ldots = a_k = 0$\\
+        & \\
+        & So, we can now write\\
+        & $f(\vec{v}) = \sum_{i=1}^{l} b_iy_i + \sum_{i=1}^{m} c_iz_i$\\
+        & \\
+        & Now, $\forall \vec{v} \in W_1$,\\
+        & $\vec{v} = \sum_{i=1}^{k} x_i\alpha_i + \sum_{i=1}^{l} y_i\beta_i$\\
+        & $\implies f_1(\vec{v}) = \sum_{i=1}^{k} a_ix_i + \sum_{i=1}^{l} b_iy_i$\\
+        & Comparing this to the original equation, we can say $c_i = 0$\\
+        & \\
+        & And $\forall \vec{v} \in W_2$,\\
+        & $\vec{v} = \sum_{i=1}^{k} x_i\alpha_i + \sum_{i=1}^{m} z_i\gamma_i$\\
+        & $\implies f_2(\vec{v}) = \sum_{i=1}^{k} a_ix_i + \sum_{i=1}^{m} c_iz_i$\\
+        & Comparing this to the original equation, we can say $b_i = 0$\\
+        & \\
+        & $f = f_1 + f_2$\\
+        & \\
+        & $\because a_i = b_i = c_i = 0$,\\
+        & $f_1(\vec{v}) = 0$\\
+        & $\implies f_1 \in W_1^0$\\
+        & Also, $f_2(\vec{v}) = 0$\\
+        & $\implies f_2 \in W_2^0$\\
+        & So, $f_1 + f_2 \in (W_1^0 + W_2^0)$\\
+        & $\implies f \in (W_1^0 + W_2^0)$\\
+        & \\
+        & $\therefore (W_1 \cap W_2)^0 \subseteq (W_1^0 + W_2^0)$\\
+        & \\
+    \hline
+        & \\
+        & Hence, $(W_1 \cap W_2)^0 = (W_1^0 + W_2^0)$\\
+        & \\
+    \hline
+        & \\
+        Verification & 1. Since the annihilator $(W_1 + W_2)^0$ is a complement of $(W_1 + W_2)$,\\
+        & Using Demorgan's Laws of the complement of union of two sets is\\
+        & the intersection of their complements, it is verified\\
+        & $(W_1 + W_2)^0 = W_1^0 \cap W_2^0$\\
+        &\\
+        & 2. And using De Morgan's laws of the complement of intersection of two sets is\\
+        & the union of their complements, it is verified\\
+        & $(W_1 \cap W_2)^0 = W_1^0 + W_2^0$\\
+        & \\
+    \hline
+    \caption{Proving properties of vectorspaces and subspaces}
+    \label{tab:proof}
+\end{longtable}
+\end{document}
