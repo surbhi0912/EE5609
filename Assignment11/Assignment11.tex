@@ -1,0 +1,205 @@
+\documentclass[journal,12pt]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide} %loads TikZ and tkz-base
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                          
+    \usepackage{array}                                          
+    \usepackage{longtable}                                      
+    \usepackage{calc}                                           
+    \usepackage{multirow}                                       
+    \usepackage{hhline}                                         
+    \usepackage{ifthen}
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\begin{document}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\bibliographystyle{IEEEtran}
+
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+
+\numberwithin{equation}{subsection}
+
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+\renewcommand{\thefigure}{\theproblem}
+
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\begin{center}
+\huge Assignment 11\\
+\large Surbhi Agarwal\\
+\end{center}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{abstract}
+This document illustrates linear transformation matrices and 
+\end{abstract}
+
+\section{Problem}
+Let $\vec{S}: \mathbb R^n \rightarrow \mathbb R^n$ be given by $\vec{S}(\vec{v}) = \alpha\vec{v}$, for a fixed $\alpha \in \mathbb R, \alpha \neq 0$. Let $\vec{T}: \mathbb R^n \rightarrow \mathbb R^n$ be a linear transformation such that $\vec{B} = \{ \vec{v}_1,\ldots,\vec{v}_n \}$ is a set of linearly independent eigenvectors of $\vec{T}$. Then
+\begin{enumerate}
+    \item The matrix of $\vec{T}$ with respect to $\vec{B}$ is diagonal
+    \item The matrix of $(\vec{T}-\vec{S})$ with respect to $\vec{B}$ is diagonal
+    \item The matrix of $\vec{T}$ with respect to $\vec{B}$ is not necessarily diagonal, but is upper triangular
+    \item The matrix of $\vec{T}$ with respect to $\vec{B}$ is diagonal but the matrix of $(\vec{T}-\vec{S})$ with respect to $\vec{B}$ is not diagonal.
+\end{enumerate}
+\section{Solution}
+Given that $\vec{T}: \mathbb R^n \rightarrow \mathbb R^n$ be a linear transformation and B represents a set of linearly independent eigenvectors of $\vec{T}$ given as follows
+\begin{align}
+    \vec{B} = \{\vec{v}_1,\ldots,\vec{v}_n\}
+\end{align}
+So,
+\begin{align}
+    \vec{T}\vec{v}_i = \lambda_i\vec{v}_i
+\end{align}
+where $\lambda_i$ represents the eigenvalue $\lambda_i$ corresponding to $\vec{v}_i$. Hence, the matrix $\vec{T}$ with respect to $\vec{B}$ can be represented as
+\begin{align}
+    \vec{T} = \myvec{\lambda_1 & 0 & \dots & 0\\ 0 & \lambda_2 & \dots & 0\\ \vdots & \ddots &  & \\ 0 & \dots & 0 & \lambda_n}\label{eq:T}
+\end{align}
+And,
+\begin{align}
+    (\vec{T}-\vec{S})\vec{v}_i & = \vec{T}(\vec{v}_i) - \vec{S}(\vec{v}_i)\\& = \lambda_i\vec{v}_i - \alpha\vec{v}_i \\ & = (\lambda_i - \alpha)\vec{v}_i
+\end{align}
+Hence, matrix of $\vec{T}-\vec{S}$ with respect to $\vec{B}$ can be represented as
+\begin{align}
+    \vec{T}-\vec{S} = \myvec{\lambda_1-\alpha & 0 & \dots & 0\\ 0 & \lambda_2-\alpha & \dots & 0\\ \vdots & \ddots &  & \\ 0 & \dots & 0 & \lambda_n-\alpha}\label{eq:T-S}
+\end{align}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
+    \hline
+        & \\
+        1. The matrix of $\vec{T}$ & True, as seen\\
+        w.r.t to $\vec{B}$ is diagonal & from \eqref{eq:T}\\
+        & \\
+    \hline
+        & \\
+        2. The matrix of $(\vec{T}-\vec{S})$ & True, as seen\\
+        w.r.t $\vec{B}$ is diagonal & from \eqref{eq:T-S}\\
+        & \\
+    \hline
+        & \\
+        3. The matrix of $\vec{T}$ with respect & False, as\\
+        to $\vec{B}$ is not necessarily diagonal & already proved\\
+        but is upper triangular & $\vec{T}$ is diagonal\\
+        & \\
+    \hline
+        & \\
+        4. The matrix of $\vec{T}$ with respect to $\vec{B}$ & False, as\\
+        is diagonal but the matrix of $(\vec{T}-\vec{S})$ & already proved\\
+        with respect to $\vec{B}$ is not diagonal & $\vec{T}-\vec{S}$ is diagonal\\
+        & \\
+    \hline
+    \caption{Verifying the given options}
+    \label{tab:proof}
+\end{longtable}
+\end{document}
