@@ -1,0 +1,218 @@
+\documentclass[journal,12pt]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide} %loads TikZ and tkz-base
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                          
+    \usepackage{array}                                          
+    \usepackage{longtable}                                      
+    \usepackage{calc}                                           
+    \usepackage{multirow}                                       
+    \usepackage{hhline}                                         
+    \usepackage{ifthen}
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\begin{document}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\bibliographystyle{IEEEtran}
+
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+
+\numberwithin{equation}{subsection}
+
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+\renewcommand{\thefigure}{\theproblem}
+
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\begin{center}
+\huge Assignment 12\\
+\large Surbhi Agarwal\\
+\end{center}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{abstract}
+This document illustrates concepts of dimensions of image of a linear transformation and columnspace.
+\end{abstract}
+
+\section{Problem}
+Given a $4 \times 4$ matrix $\vec{A}$, let $T:\mathbb R^4 \rightarrow \mathbb R^4$ be the linear transformation defined by $\vec{T}\vec{v} = \vec{A}\vec{v}$, where we think of $\mathbb R^4$ as the set of real $4 \times 1$ matrices. For which choices of $\vec{A}$ given below, do Image$(\vec{T})$ and Image$(\vec{T}^2)$ have respective dimensions 2 and 1? ($*$ denotes a nonzero entry)
+\begin{enumerate}
+    \item $\vec{A} = \myvec{0 & 0 & * & * \\ 0 & 0 & * & * \\ 0 & 0 & 0 & * \\ 0 & 0 & 0 & 0}$
+    \item $\vec{A} = \myvec{0 & 0 & * & 0 \\ 0 & 0 & * & 0 \\ 0 & 0 & 0 & * \\ 0 & 0 & 0 & *}$
+    \item $\vec{A} = \myvec{0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & * \\ 0 & 0 & * & 0}$
+    \item $\vec{A} = \myvec{0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & * & * \\ 0 & 0 & * & *}$
+\end{enumerate}
+\section{Solution}
+We can say,
+\begin{align}
+    \vec{T}(\vec{v}) = \vec{A}\vec{v} = \text{Image}(\vec{T}) = C(\vec{A})\\
+    \vec{T}^2(\vec{v}) = \vec{A}^2\vec{v} = \text{Image}(\vec{T}^2) = C(\vec{A}^2)
+\end{align}
+where $C(\vec{A})$ and $C(\vec{A}^2)$ denote the columnspace of $\vec{A}$ and $\vec{A}^2$ respectively. Therefore,
+\begin{align}
+    \text{dimension}(\text{Image}(\vec{T})) = \text{dimension}(C(\vec{A})) = \text{rank}(\vec{A})\\
+    \text{dimension}(\text{Image}(\vec{T}^2)) = \text{dimension}(C(\vec{A}^2)) = \text{rank}(\vec{A}^2)
+\end{align}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
+    \hline
+        & \\
+        1. $\vec{A} = \myvec{0 & 0 & * & * \\ 0 & 0 & * & * \\ 0 & 0 & 0 & * \\ 0 & 0 & 0 & 0}$ & The number of linearly independent columns in $\vec{A}$ is 2\\
+    \hline
+        & \\
+        & hence, $dim(Image(\vec{T})) = dim(C(\vec{A})) = 2$\\
+        & \\
+        & $\vec{A}^2 = \myvec{0 & 0 & 0 & * \\ 0 & 0 & 0 & * \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0}$\\
+        & \\
+        & The number of linearly independent columns in $\vec{A}^2$ is 1\\
+        & hence, $dim(Image(\vec{T}^2)) = dim(C(\vec{A}^2)) = 1$\\
+        & \\
+        & $\therefore$ This option is true.\\
+    \hline
+        & \\
+        2. $\vec{A} = \myvec{0 & 0 & * & 0 \\ 0 & 0 & * & 0 \\ 0 & 0 & 0 & * \\ 0 & 0 & 0 & *}$ & The number of linearly independent columns in $\vec{A}$ is 2\\
+        & hence, dim(Image($\vec{T}$)) = dim(C($\vec{A}$)) = 2\\
+        & \\
+        & $\vec{A}^2 = \myvec{0 & 0 & 0 & * \\ 0 & 0 & 0 & * \\ 0 & 0 & 0 & * \\ 0 & 0 & 0 & *}$\\
+        & \\
+        & The number of linearly independent columns in $\vec{A}^2$ is 1\\
+        & hence, dim(Image($\vec{T}^2$)) = dim(C($\vec{A}^2$)) = 1\\
+        & \\
+        & $\therefore$ This option is true.\\
+    \hline
+        & \\
+        3. $\vec{A} = \myvec{0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & * \\ 0 & 0 & * & 0}$ & The number of linearly independent columns in $\vec{A}$ is 2\\
+        & hence, $dim(Image(\vec{T})) = dim(C(\vec{A})) = 2$\\
+        & \\
+        & $\vec{A}^2 = \myvec{0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & * & 0 \\ 0 & 0 & 0 & *}$\\
+        & \\
+        & The number of linearly independent columns in $\vec{A}^2$ is 2\\
+        & hence, $dim(Image(\vec{T}^2)) = dim(C(\vec{A}^2)) = 2 \neq 1$\\
+        & \\
+        & $\therefore$ This option is false.\\
+    \hline
+        & \\
+        4. $\vec{A} = \myvec{0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & * & * \\ 0 & 0 & * & *}$ & This option is false\\
+        & Counter example:\\
+        & For some non-zero $b,c \in \mathbb R$, let\\
+        & $\vec{A} = \myvec{0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & b & b \\ 0 & 0 & c & c}$\\
+        & \\
+        & The number of linearly independent columns in $\vec{A}$ is 1\\
+        & hence, $dim(Image(\vec{T})) = dim(C(\vec{A})) = 1 \neq 2$\\
+        & \\
+    \hline
+    \caption{Verifying with the options}
+    \label{tab:proof}
+\end{longtable}
+\end{document}
